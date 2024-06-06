@@ -1,7 +1,11 @@
-- hosts: raspberrypi
+- hosts: localhost
   become: true
+  
   tasks:
-    - name: Install htop
+    - name: Install packages
       apt:
-        name: htop
+        name: 
+          - htop
+          - tmux
+          - mc
 
