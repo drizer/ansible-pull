@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: raspberrypi
   become: true
   tasks:
     - name: Install htop
