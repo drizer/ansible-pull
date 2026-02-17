@@ -1,10 +1,10 @@
-- hosts: ubuntu-s-1vcpu-512mb-10gb-syd1-01 
+- hosts: localhost 
   become: true
  
   pre_tasks:
-    - name: Add latest yt-dlp repos
-      ansible.builtin.apt_repository:
-        repo: "ppa:tomtomtom/yt-dlp"
+    #  - name: Add latest yt-dlp repos
+    #  ansible.builtin.apt_repository:
+    #    repo: "ppa:tomtomtom/yt-dlp"
 
     - name: update repositories
       apt:
