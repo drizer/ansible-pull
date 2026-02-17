@@ -1,0 +1,20 @@
+- name: create default user
+  user:
+    name: dmall
+    system: yes
+
+- name: Ensure the administrative group exists (e.g., 'wheel' for RHEL/CentOS)
+  ansible.builtin.group:
+    name: wheel
+    state: present
+
+- name: Add the user to the administrative group
+  ansible.builtin.user:
+    name: dmall
+    groups: wheel
+    append: true # Ensures the user is added to the group without removing them from others
+
+- name: create ansible user
+  user:
+    name: ansible
+    system: yes

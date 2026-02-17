@@ -1,11 +1,30 @@
 - hosts: localhost
   become: true
-  
+ 
+  pre_tasks:
+    - name: Add latest yt-dlp repos
+      ansible.builtin.apt_repository:
+        repo: "ppa:tomtomtom/yt-dlp"
+
+    - name: update repositories
+      apt:
+        update_cache: yes
+      changed_when: False
+
   tasks:
+    - name: Include user tasks
+      import_tasks: tasks/users.yml
+
     - name: Install packages
       apt:
         name: 
           - htop
           - tmux
-          - mc
+          - sqlite3
+          - yt-dlp
 
+    - name: Install a snap package
+      community.general.snap:
+        name: tailscale
+        state: present
+        classic: false  # Use 'classic: true' for classic snaps if required, e.g., heroku CLI
