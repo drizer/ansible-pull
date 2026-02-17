@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: ubuntu-s-1vcpu-512mb-10gb-syd1-01 
   become: true
  
   pre_tasks:
