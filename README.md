@@ -12,18 +12,23 @@ ansible-pull -o -U https://github.com/drizer/ansible-pull
 
 ```
 
-## Users
+## users
 
-create a defulat user and anasible user
-
+creates users:
+- dmall
+- ansible
 
 ## tools
 
-tmux
-htop
-sqlite3
-yt-dlp
+- tmux
+- htop
+- sqlite3
+- yt-dlp
 
 ## services
 
-installs: tailscale (manually configured)
+updates: 
+- apt repo
+
+installs: 
+- tailscale
